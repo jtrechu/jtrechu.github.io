@@ -11,7 +11,7 @@ redirect_from:
 
 ## Education  
 - **BSc in Statistics** (Expected June 2025) - Universidad de Sevilla, Spain  
-  - GPA: 9.44/10  
+  - GPA: 9.45/10  
 - **BSc in Mathematics** (Expected June 2025) - Universidad de Sevilla, Spain  
   - GPA: 9.0/10  
 - **Erasmus+ Exchange Student** (2023-2024) - University of Warwick, UK  
@@ -35,9 +35,13 @@ redirect_from:
 - **Santander Erasmus Scholarship** (2023)  
   - Merit-based funding for **exchange students**  
 - **Spanish Ministry of Education Collaboration Scholarship** (2024-2025)  
-  - Funded research project on **Linear Regularization**  
+  - Funded research project on **Linear Regularization**
+- **"LaCaixa" Fellowship (2025-2027)**
+    - Top national fellowship funding my master studies at Bonn Universität
 
 ## Work Experience  
+- **Student Researcher** Institute of Mathematics of Universidad de Sevilla (June 2025 - Sept 2025)
+    - Worked on an Operations Research problem on drone routing with time windows
 - **Press Team Volunteer**  9th European Congress of Mathematics (July 2024)  
   - Wrote daily newsletters & translated interviews  
 - **Intern Student**  University of Seville’s Algebra Department (Nov 2022 - May 2023)  
@@ -46,14 +50,14 @@ redirect_from:
   - Tutor for **university & IB students**  
 
 ## Skills  
-- **Mathematics**: Probability, Stochastic Processes, Linear Regression, Regularization Techniques  
+- **Mathematics**: Probability, Stochastic Processes, Modelization, Regularization Techniques  
 - **Programming**:  
-  - **Advanced**: R, LaTeX, MySQL, MongoDB  
-  - **Intermediate**: Haskell, MATLAB, Lean, Python, AMPL  
+  - **Advanced**: R, LaTeX, MySQL, MongoDB, Gurobi
+  - **Intermediate**: Haskell, MATLAB, Lean, Python, AMPL, JavaScript, HTML, PHP 
 - **Languages**:  
   - **Spanish** (Native)  
   - **English** (Proficiency - Cambridge & TOEFL iBT)  
-  - **German** (Conversational - B1 Level)  
+  - **German** (Conversational - A2 Level)  
 
 ## Service & Leadership  
 - Student Volunteer at **9th European Congress of Mathematics**  
