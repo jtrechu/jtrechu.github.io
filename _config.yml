@@ -24,9 +24,9 @@ author:
   # Biographic information
   avatar           : "picture.jpg"
   name             : "Jaime Díaz-Trechuelo Sánchez-Moliní"
-  pronouns         : # example: "she/her"  
-  bio              : "Senior Undergraduate in Mathematics and Statistic"
-  location         : "Seville, Spain"
+  pronouns         : "he/him" 
+  bio              : "Mathematics MSc Student"
+  location         : "Bonn, Germany"
   employer         : "Bonn Universität"
   uri              : # URL
   email            : "jdtrechuelo@gmail.com" 
