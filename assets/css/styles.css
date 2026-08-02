@@ -189,6 +189,7 @@ h1, h2 { text-wrap: balance; }
 .award-list li { display: grid; grid-template-columns: 70px 1fr; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--line); }
 .award-list span { color: var(--text-faint); font-size: 10px; font-weight: 760; letter-spacing: .07em; }
 .award-list strong { font-size: 13px; line-height: 1.4; }
+.award-links { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
 
 .notes-preview-grid { display: grid; grid-template-columns: 1fr .85fr; gap: 80px; align-items: center; }
 .notes-preview h2 { max-width: 650px; margin-bottom: 22px; }
