@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jtrechu.github.io/sitemap.xml

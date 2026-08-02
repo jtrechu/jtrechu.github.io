@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">Fellowship ceremony placeholder</title><desc id="desc">Replace with a photograph from the la Caixa fellowship ceremony.</desc>
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0e1d35"/><stop offset="1" stop-color="#244f9b"/></linearGradient></defs>
+  <rect width="1200" height="750" fill="url(#g)"/>
+  <circle cx="930" cy="140" r="220" fill="none" stroke="#fff" stroke-opacity=".13" stroke-width="2"/><circle cx="930" cy="140" r="150" fill="none" stroke="#fff" stroke-opacity=".13" stroke-width="2"/>
+  <path d="M85 580C275 500 430 670 620 565s310-120 500-25" fill="none" stroke="#86b1ff" stroke-width="6" stroke-linecap="round"/>
+  <text x="85" y="180" fill="#fff" font-family="Georgia, serif" font-size="70">“la Caixa” Fellowship</text>
+  <text x="89" y="238" fill="#d6e4ff" font-family="Arial, sans-serif" font-size="28" letter-spacing="4">CEREMONY PHOTOGRAPH</text>
+</svg>
