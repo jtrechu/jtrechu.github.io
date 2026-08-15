@@ -1,79 +1,97 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CV — Jaime Díaz-Trechuelo</title>
-  <meta name="description" content="Curriculum vitae of Jaime Díaz-Trechuelo Sánchez-Moliní.">
-  <link rel="icon" href="assets/images/favicon.svg?v=4" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="identity" href="index.html"><span class="monogram" aria-hidden="true">JΔ</span><span>Jaime Díaz-Trechuelo</span></a>
-      <nav class="nav" aria-label="Primary navigation"><a href="index.html#research">Research</a><a href="index.html#academic">Academic</a><a href="notes.html">Notes</a><a href="cv.html">CV</a></nav>
-    </div>
-  </header>
-  <main class="page-main wrap cv-page">
-    <div class="cv-top">
-      <div>
-        <h1>Jaime Díaz-Trechuelo<br>Sánchez-Moliní</h1>
-        <button class="print-link" type="button" onclick="window.print()">Print / save as PDF</button>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>CV — Jaime Díaz-Trechuelo</title>
+    <meta name="description" content="Curriculum vitae of Jaime Díaz-Trechuelo Sánchez-Moliní.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="wordmark" href="index.html" aria-label="Jaime Díaz-Trechuelo, home">Jaime Díaz-Trechuelo<span class="wordmark-dot">.</span></a>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <a href="index.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="background.html">Background</a>
+          <a href="notes.html">Notes</a>
+          <a class="active" href="cv.html" aria-current="page">CV</a>
+        </nav>
       </div>
-      <div class="cv-contact">
-        <span>Bonn, Germany</span>
-        <a href="mailto:jdtrechuelo@gmail.com">jdtrechuelo@gmail.com</a>
-        <a href="https://jtrechu.github.io/">jtrechu.github.io</a>
-        <a href="https://github.com/jtrechu">github.com/jtrechu</a>
-      </div>
-    </div>
+    </header>
 
-    <section class="cv-section">
-      <h2>Education</h2>
-      <div>
-        <div class="cv-entry"><div class="cv-date">2025–2027</div><div><h3>MSc Mathematics · University of Bonn</h3><p>Probability, stochastic processes, Markov processes, MCMC, numerical analysis, and scientific computing. Master's thesis in preparation on hydrodynamic limits for interacting particle systems.</p></div></div>
-        <div class="cv-entry"><div class="cv-date">2023–2024</div><div><h3>Erasmus+ Exchange · University of Warwick</h3><p>Advanced coursework in mathematics and statistics; First Class in all modules.</p></div></div>
-        <div class="cv-entry"><div class="cv-date">2020–2025</div><div><h3>Double BSc in Mathematics and Statistics · University of Seville</h3><p>Mathematics average 9.0/10; Statistics average 9.45/10.</p></div></div>
-      </div>
-    </section>
+    <main class="cv-page shell">
+      <header class="cv-head">
+        <div>
+          <p class="eyebrow">Curriculum vitae · August 2026</p>
+          <h1>Jaime Díaz-Trechuelo<br>Sánchez-Moliní</h1>
+        </div>
+        <div class="cv-contact">
+          <span>Bonn, Germany</span>
+          <a href="mailto:jdtrechuelo@gmail.com">jdtrechuelo@gmail.com</a>
+          <a href="https://github.com/jtrechu" target="_blank" rel="noreferrer">github.com/jtrechu ↗</a>
+          <a class="print-button" href="assets/jaime-diaz-trechuelo-cv.pdf" target="_blank" rel="noreferrer">Download CV (PDF) ↗</a>
+        </div>
+      </header>
 
-    <section class="cv-section">
-      <h2>Research</h2>
-      <div>
-        <div class="cv-entry"><div class="cv-date">2026–</div><div><h3>Hydrodynamic limits for interacting particle systems</h3><p>Master's thesis in preparation at the University of Bonn.</p></div></div>
-        <div class="cv-entry"><div class="cv-date">2024–2026</div><div><h3>Cost-Sensitive Constrained Elastic Net</h3><p>Constrained regularisation for subgroup-aware predictive performance; short paper and poster prepared for IWSM 2026.</p></div></div>
-        <div class="cv-entry"><div class="cv-date">2025</div><div><h3>Drone routing for event filming</h3><p>Mixed-integer optimisation with battery and time-window constraints; University of Seville.</p></div></div>
-      </div>
-    </section>
+      <div class="cv-sections">
+        <section class="cv-section">
+          <div class="cv-section-title"><span>01</span><h2>Education</h2></div>
+          <div class="cv-entry-list">
+            <article class="cv-entry"><time>2025—27</time><div><h3>MSc Mathematics</h3><p class="cv-place">University of Bonn</p><p>Current average: 1.0 (German grading scale). Main areas (in order): Probability, and Numerical Analysis</p></div></article>
+            <article class="cv-entry"><time>2023—24</time><div><h3>Erasmus+ exchange</h3><p class="cv-place">University of Warwick</p><p>Advanced coursework in mathematics and statistics; First Class in all modules.</p></div></article>
+            <article class="cv-entry"><time>2020—25</time><div><h3>Double BSc in Mathematics and Statistics</h3><p class="cv-place">University of Seville</p><p>Mathematics average 9.0/10; Statistics average 9.45/10.</p></div></article>
+          </div>
+        </section>
 
-    <section class="cv-section">
-      <h2>Teaching</h2>
-      <div>
-        <div class="cv-entry"><div class="cv-date">2026</div><div><h3>Tutor · Introduction to Numerical Analysis</h3><p>University of Bonn.</p></div></div>
-        <div class="cv-entry"><div class="cv-date">2024</div><div><h3>Press Team Volunteer · 9th European Congress of Mathematics</h3><p>Daily congress coverage and interview translation.</p></div></div>
-      </div>
-    </section>
+        <section class="cv-section">
+          <div class="cv-section-title"><span>02</span><h2>Research &amp; projects</h2></div>
+          <div class="cv-entry-list">
+            <article class="cv-entry"><time>2026—</time><div><h3>Hydrodynamic limits for interacting particle systems</h3><p class="cv-place">University of Bonn</p><p>Master’s thesis in preparation.</p></div></article>
+            <article class="cv-entry"><time>2024—26</time><div><h3>Cost-Sensitive Constrained Elastic Net</h3><p class="cv-place">University of Seville</p><p>Constrained regularisation for subgroup-aware predictive performance; short paper and poster prepared for IWSM 2026.</p></div></article>
+            <article class="cv-entry"><time>2025</time><div><h3>Drone routing for event filming</h3><p class="cv-place">University of Seville</p><p>Mixed-integer optimisation with battery and time-window constraints.</p></div></article>
+          </div>
+        </section>
 
-    <section class="cv-section">
-      <h2>Honours</h2>
-      <div>
-        <div class="cv-entry"><div class="cv-date">2026</div><div><h3><a href="https://www.acsyma.es/PremioTrayectorias.997.php">XVI Andalusian Award for Best Academic Trajectory in Statistics</a></h3></div></div>
-        <div class="cv-entry"><div class="cv-date">2025–2027</div><div><h3>“la Caixa” Postgraduate Studies Abroad Fellowship</h3></div></div>
-        <div class="cv-entry"><div class="cv-date">2024–2025</div><div><h3>Spanish Ministry of Education Collaboration Scholarship</h3></div></div>
-        <div class="cv-entry"><div class="cv-date">2023–2024</div><div><h3>Santander Erasmus Scholarship</h3></div></div>
-        <div class="cv-entry"><div class="cv-date">2018–2019</div><div><h3>Amancio Ortega Foundation Scholarship</h3></div></div>
-      </div>
-    </section>
+        <section class="cv-section">
+          <div class="cv-section-title"><span>03</span><h2>Teaching &amp; service</h2></div>
+          <div class="cv-entry-list">
+            <article class="cv-entry"><time>2026</time><div><h3>Tutor · Introduction to Numerical Analysis</h3><p class="cv-place">University of Bonn</p></div></article>
+            <article class="cv-entry"><time>2024</time><div><h3>Press team volunteer · 9th European Congress of Mathematics</h3><p class="cv-place">Seville</p><p>Daily congress coverage and interview translation.</p></div></article>
+          </div>
+        </section>
 
-    <section class="cv-section">
-      <h2>Skills</h2>
-      <div>
-        <div class="cv-entry"><div class="cv-date">Programming</div><div><p>R, Python, MATLAB, LaTeX, SQL, JavaScript, HTML/CSS.</p></div></div>
-        <div class="cv-entry"><div class="cv-date">Languages</div><div><p>Spanish (native), English (professional), German (basic).</p></div></div>
+        <section class="cv-section">
+          <div class="cv-section-title"><span>04</span><h2>Selected honours</h2></div>
+          <div class="cv-entry-list">
+            <article class="cv-entry"><time>2026</time><div><h3>XVI Andalusian Award for Best Academic Trajectory in Statistics</h3></div></article>
+            <article class="cv-entry"><time>2025—27</time><div><h3>“la Caixa” Postgraduate Studies Abroad Fellowship</h3></div></article>
+            <article class="cv-entry"><time>2024—25</time><div><h3>Spanish Ministry of Education Collaboration Scholarship</h3></div></article>
+            <article class="cv-entry"><time>2023—24</time><div><h3>Santander Erasmus Scholarship</h3></div></article>
+            <article class="cv-entry"><time>2018—19</time><div><h3>Amancio Ortega Foundation Scholarship</h3></div></article>
+          </div>
+        </section>
+
+        <section class="cv-section">
+          <div class="cv-section-title"><span>05</span><h2>Skills</h2></div>
+          <div class="cv-entry-list">
+            <article class="cv-entry"><time>Programming</time><div><p>R, Python, MATLAB, LaTeX, SQL, JavaScript, HTML/CSS.</p></div></article>
+            <article class="cv-entry"><time>Languages</time><div><p>Spanish (native), English (professional), German (basic).</p></div></article>
+          </div>
+        </section>
       </div>
-    </section>
-  </main>
-  <footer class="footer wrap"><span>Jaime Díaz-Trechuelo</span><span><a href="index.html">Home</a></span></footer>
-</body>
+    </main>
+
+    <footer class="site-footer shell">
+      <p>© 2026 Jaime Díaz-Trechuelo</p>
+      <div>
+        <a href="mailto:jdtrechuelo@gmail.com">Email</a>
+        <a href="https://github.com/jtrechu" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/jaime-diaz-trechuelo-sanchez-molini/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+      </div>
+    </footer>
+  </body>
 </html>
