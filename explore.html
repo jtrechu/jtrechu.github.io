@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+
+    <title>Explore | Jaime Díaz-Trechuelo</title>
+    <meta name="description" content="Interactive stochastic-process simulations by Jaime Díaz-Trechuelo.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jtrechu.github.io/explore.html">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+      .explore-page {
+        --green: #6f7541;
+        --orange: #b46d52;
+        --black: #111111;
+        --slate: #566670;
+        color: var(--black);
+        max-width: 1000px;
+        padding-bottom: 4rem;
+      }
+
+      .explore-intro {
+        max-width: 44rem;
+        margin: 0 0 3.8rem;
+        color: var(--black);
+        font: inherit;
+      }
+
+      .experiment {
+        margin: 0 0 5rem;
+      }
+
+      .experiment-head {
+        max-width: 44rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .experiment-head h2 {
+        margin: 0 0 0.55rem;
+        color: var(--black);
+        font: inherit;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .experiment-head p,
+      .experiment-note {
+        margin: 0;
+        color: var(--black);
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+
+      .sim-controls {
+        display: flex;
+        align-items: flex-end;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.85rem;
+      }
+
+      .button-row {
+        display: flex;
+        gap: 0.45rem;
+        flex-wrap: wrap;
+      }
+
+      .sim-button,
+      .sim-select {
+        appearance: none;
+        min-height: 2.25rem;
+        padding: 0.42rem 0.72rem;
+        border: 1px solid var(--black);
+        border-radius: 0;
+        background: #fff;
+        color: var(--black);
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .sim-button:hover,
+      .sim-button:focus-visible,
+      .sim-select:focus-visible {
+        border-color: var(--orange);
+        color: var(--orange);
+        outline: none;
+      }
+
+      .slider-control {
+        display: grid;
+        grid-template-columns: minmax(8rem, 18rem) auto;
+        gap: 0.3rem 0.6rem;
+        align-items: center;
+        font-size: 0.82rem;
+      }
+
+      .slider-control label {
+        grid-column: 1;
+      }
+
+      .slider-control output {
+        grid-column: 2;
+        color: var(--orange);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .slider-control input[type="range"] {
+        grid-column: 1 / -1;
+        width: 100%;
+        accent-color: var(--orange);
+      }
+
+      .sim-frame {
+        width: min(100%, 760px);
+      }
+
+      .sim-canvas,
+      .chart-canvas {
+        display: block;
+        width: 100%;
+        border: 1px solid var(--black);
+        background: #fff;
+      }
+
+      .sim-canvas {
+        aspect-ratio: 16 / 9;
+      }
+
+      .chart-canvas {
+        margin-top: 0.55rem;
+        aspect-ratio: 5 / 1;
+      }
+
+      .sim-meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin: 0.42rem 0 0;
+        font-size: 0.73rem;
+        color: var(--black);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .legend {
+        display: flex;
+        gap: 0.9rem;
+        flex-wrap: wrap;
+      }
+
+      .legend-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+
+      .legend-dot {
+        width: 0.65rem;
+        height: 0.65rem;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      .legend-dot.green { background: var(--green); }
+      .legend-dot.orange { background: var(--orange); }
+      .legend-dot.slate { background: var(--slate); }
+
+      .experiment-note {
+        max-width: 44rem;
+        margin-top: 0.7rem;
+        font-size: 0.76rem;
+      }
+
+      @media (max-width: 650px) {
+        .experiment { margin-bottom: 4rem; }
+        .sim-controls { align-items: stretch; }
+        .slider-control { flex: 1 1 100%; grid-template-columns: 1fr auto; }
+        .sim-button { flex: 1 1 auto; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="wordmark" href="index.html" aria-label="Jaime Díaz-Trechuelo, home">Jaime Díaz-Trechuelo<span class="wordmark-dot">.</span></a>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <a href="index.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="background.html">Background</a>
+          <a href="notes.html">Notes</a>
+          <a class="active" href="explore.html" aria-current="page">Explore</a>
+          <a href="cv.html">CV</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="content-page shell">
+      <header class="page-head">
+        <h1>Explore<span class="accent-dot">.</span></h1>
+      </header>
+
+      <div class="explore-page">
+        <p class="explore-intro">Here you can find some of my simulations, and other interactive stuff from the mathematics I'm working on, or that I otherwise find interesting.</p>
+
+        <section class="experiment" id="contact-section">
+          <div class="experiment-head">
+            <h2>Birth and death.</h2>
+            <p>Particles die independently at a constant rate of 1, while empty sites can be born from occupied neighbours. Change the birth rate and watch survival or extinction of the particles.</p>
+          </div>
+          <div class="sim-controls">
+            <div class="button-row">
+              <button class="sim-button" type="button" data-contact-action="toggle">Pause</button>
+              <button class="sim-button" type="button" data-contact-action="reset">Reset</button>
+            </div>
+            <div class="slider-control">
+              <label for="contact-lambda">birth rate λ</label>
+              <output id="contact-lambda-out">1.70</output>
+              <input id="contact-lambda" type="range" min="0.4" max="3.2" value="1.7" step="0.05">
+            </div>
+          </div>
+          <div class="sim-frame">
+            <canvas id="contact-canvas" class="sim-canvas" width="800" height="450" aria-label="Birth and death interacting particle system"></canvas>
+            <canvas id="contact-chart" class="chart-canvas" width="800" height="160" aria-label="Birth and death population over time"></canvas>
+            <div class="sim-meta">
+              <span class="legend-item"><span class="legend-dot orange"></span>occupied</span>
+              <span id="contact-stats">—</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="experiment" id="predator-section">
+          <div class="experiment-head">
+            <h2>Predator and prey.</h2>
+            <p>Prey reproduce independently into empty sites, while predators only reproduce by invading the spaces occupied by prey. Predators eventually die, but prey only die when taken over by predators.</p>
+          </div>
+          <div class="sim-controls">
+            <div class="button-row">
+              <button class="sim-button" type="button" data-predator-action="toggle">Pause</button>
+              <button class="sim-button" type="button" data-predator-action="reset">Reset</button>
+            </div>
+            <div class="slider-control">
+              <label for="predation-rate">predation rate</label>
+              <output id="predation-rate-out">1.60</output>
+              <input id="predation-rate" type="range" min="0.5" max="3" value="1.6" step="0.05">
+            </div>
+          </div>
+          <div class="sim-frame">
+            <canvas id="predator-canvas" class="sim-canvas" width="800" height="450" aria-label="Predator prey interacting particle system"></canvas>
+            <canvas id="predator-chart" class="chart-canvas" width="800" height="160" aria-label="Predator and prey populations over time"></canvas>
+            <div class="sim-meta">
+              <div class="legend">
+                <span class="legend-item"><span class="legend-dot green"></span>prey</span>
+                <span class="legend-item"><span class="legend-dot orange"></span>predator</span>
+              </div>
+              <span id="predator-stats">—</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="experiment" id="voter-section">
+          <div class="experiment-head">
+            <h2>Voter model.</h2>
+            <p>Three opinions compete through a single local rule: a site repeatedly copies one of its nearest neighbours. The more prevalent one opinion is among your neighbours the more likely they are to influence you.</p>
+          </div>
+          <div class="sim-controls">
+            <div class="button-row">
+              <button class="sim-button" type="button" data-voter-action="toggle">Pause</button>
+              <button class="sim-button" type="button" data-voter-action="reset">Reset</button>
+              <button class="sim-button" type="button" data-voter-action="randomize">Randomise</button>
+            </div>
+            <div class="slider-control">
+              <label for="voter-speed">speed</label>
+              <output id="voter-speed-out">5</output>
+              <input id="voter-speed" type="range" min="1" max="10" value="5" step="1">
+            </div>
+          </div>
+          <div class="sim-frame">
+            <canvas id="voter-canvas" class="sim-canvas" width="800" height="450" aria-label="Three-party voter model simulation"></canvas>
+            <div class="sim-meta">
+              <div class="legend" aria-label="Voter model opinions">
+                <span class="legend-item"><span class="legend-dot green"></span>green</span>
+                <span class="legend-item"><span class="legend-dot orange"></span>terracotta</span>
+                <span class="legend-item"><span class="legend-dot slate"></span>slate</span>
+              </div>
+              <span id="voter-stats">—</span>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <footer class="site-footer shell">
+      <p>© 2026 Jaime Díaz-Trechuelo</p>
+      <div>
+        <a href="mailto:jdtrechuelo@gmail.com">Email</a>
+        <a href="https://github.com/jtrechu" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/jaime-diaz-trechuelo-sanchez-molini/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+      </div>
+    </footer>
+
+    <script>
+      (() => {
+        'use strict';
+
+        const GREEN = '#6f7541';
+        const ORANGE = '#b46d52';
+        const BLACK = '#111111';
+        const SLATE = '#566670';
+        const WHITE = '#ffffff';
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function torusIndex(x, y, w, h) {
+          x = (x + w) % w;
+          y = (y + h) % h;
+          return y * w + x;
+        }
+
+        function randomNeighbour(x, y) {
+          const d = Math.floor(Math.random() * 4);
+          if (d === 0) return [x + 1, y];
+          if (d === 1) return [x - 1, y];
+          if (d === 2) return [x, y + 1];
+          return [x, y - 1];
+        }
+
+        function renderLattice(ctx, state, w, h, palette) {
+          const canvas = ctx.canvas;
+          ctx.fillStyle = WHITE;
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          const cellW = canvas.width / w;
+          const cellH = canvas.height / h;
+          for (let y = 0; y < h; y += 1) {
+            for (let x = 0; x < w; x += 1) {
+              const value = state[y * w + x];
+              const color = palette[value];
+              if (!color || color === WHITE) continue;
+              ctx.fillStyle = color;
+              ctx.fillRect(x * cellW, y * cellH, Math.ceil(cellW), Math.ceil(cellH));
+            }
+          }
+        }
+
+        function renderSeries(ctx, series, colors) {
+          const width = ctx.canvas.width;
+          const height = ctx.canvas.height;
+          ctx.fillStyle = WHITE;
+          ctx.fillRect(0, 0, width, height);
+          if (!series.length || !series[0].length) return;
+
+          ctx.strokeStyle = BLACK;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(0, height - 0.5);
+          ctx.lineTo(width, height - 0.5);
+          ctx.stroke();
+
+          const length = series[0].length;
+          series.forEach((values, k) => {
+            ctx.strokeStyle = colors[k];
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            values.forEach((value, i) => {
+              const x = length <= 1 ? 0 : (i / (length - 1)) * width;
+              const y = height - Math.max(0, Math.min(1, value)) * (height - 4) - 2;
+              if (i === 0) ctx.moveTo(x, y);
+              else ctx.lineTo(x, y);
+            });
+            ctx.stroke();
+          });
+        }
+
+        // --- Three-party voter model -------------------------------------------------
+        const voterCanvas = document.getElementById('voter-canvas');
+        const voterCtx = voterCanvas.getContext('2d');
+        const voterSpeed = document.getElementById('voter-speed');
+        const voterSpeedOut = document.getElementById('voter-speed-out');
+        const voterStats = document.getElementById('voter-stats');
+        const voterToggle = document.querySelector('[data-voter-action="toggle"]');
+        const voterReset = document.querySelector('[data-voter-action="reset"]');
+        const voterRandomize = document.querySelector('[data-voter-action="randomize"]');
+        const VW = 80;
+        const VH = 45;
+        let voterState = new Uint8Array(VW * VH);
+        let voterRunning = !reducedMotion;
+
+        function resetVoter() {
+          // Ordered initial condition: three geographically distinct voting blocs.
+          voterState = new Uint8Array(VW * VH);
+          const firstBoundary = Math.floor(VW / 3);
+          const secondBoundary = Math.floor(2 * VW / 3);
+
+          for (let y = 0; y < VH; y += 1) {
+            for (let x = 0; x < VW; x += 1) {
+              const i = torusIndex(x, y, VW, VH);
+              if (x < firstBoundary) voterState[i] = 0;
+              else if (x < secondBoundary) voterState[i] = 1;
+              else voterState[i] = 2;
+            }
+          }
+          drawVoter();
+        }
+
+        function randomizeVoter() {
+          voterState = new Uint8Array(VW * VH);
+          for (let i = 0; i < voterState.length; i += 1) {
+            voterState[i] = Math.floor(Math.random() * 3);
+          }
+          drawVoter();
+        }
+
+        function stepVoter() {
+          const multiplier = Number(voterSpeed.value);
+          const events = Math.floor(VW * VH * 0.08 * multiplier);
+          for (let k = 0; k < events; k += 1) {
+            const x = Math.floor(Math.random() * VW);
+            const y = Math.floor(Math.random() * VH);
+            const [nx, ny] = randomNeighbour(x, y);
+            voterState[torusIndex(x, y, VW, VH)] = voterState[torusIndex(nx, ny, VW, VH)];
+          }
+        }
+
+        function drawVoter() {
+          renderLattice(voterCtx, voterState, VW, VH, [GREEN, ORANGE, SLATE]);
+          const counts = [0, 0, 0];
+          for (const value of voterState) counts[value] += 1;
+          const total = voterState.length;
+          voterStats.textContent = counts.map(c => `${Math.round(100 * c / total)}%`).join(' · ');
+        }
+
+        voterToggle.addEventListener('click', () => {
+          voterRunning = !voterRunning;
+          voterToggle.textContent = voterRunning ? 'Pause' : 'Run';
+        });
+        voterReset.addEventListener('click', resetVoter);
+        voterRandomize.addEventListener('click', randomizeVoter);
+        voterSpeed.addEventListener('input', () => { voterSpeedOut.textContent = voterSpeed.value; });
+
+        // --- Birth/death contact-process-style model ---------------------------------
+        const contactCanvas = document.getElementById('contact-canvas');
+        const contactCtx = contactCanvas.getContext('2d');
+        const contactChart = document.getElementById('contact-chart');
+        const contactChartCtx = contactChart.getContext('2d');
+        const contactLambda = document.getElementById('contact-lambda');
+        const contactLambdaOut = document.getElementById('contact-lambda-out');
+        const contactStats = document.getElementById('contact-stats');
+        const contactToggle = document.querySelector('[data-contact-action="toggle"]');
+        const contactReset = document.querySelector('[data-contact-action="reset"]');
+        const CW = 80;
+        const CH = 45;
+        let contactState = new Uint8Array(CW * CH);
+        let contactRunning = !reducedMotion;
+        let contactHistory = [];
+        let contactTick = 0;
+
+        function resetContact() {
+          contactState = new Uint8Array(CW * CH);
+          const cx = CW / 2;
+          const cy = CH / 2;
+          for (let y = 0; y < CH; y += 1) {
+            for (let x = 0; x < CW; x += 1) {
+              const d = Math.hypot(x - cx, y - cy);
+              if (d < 9 && Math.random() < 0.72) contactState[y * CW + x] = 1;
+            }
+          }
+          contactHistory = [];
+          contactTick = 0;
+          drawContact(true);
+        }
+
+        function contactNeighbourCount(x, y) {
+          return contactState[torusIndex(x + 1, y, CW, CH)] +
+                 contactState[torusIndex(x - 1, y, CW, CH)] +
+                 contactState[torusIndex(x, y + 1, CW, CH)] +
+                 contactState[torusIndex(x, y - 1, CW, CH)];
+        }
+
+        function stepContact() {
+          const lambda = Number(contactLambda.value);
+          const dt = 0.12;
+          const events = Math.floor(CW * CH * 0.45);
+          for (let k = 0; k < events; k += 1) {
+            const x = Math.floor(Math.random() * CW);
+            const y = Math.floor(Math.random() * CH);
+            const i = torusIndex(x, y, CW, CH);
+            if (contactState[i]) {
+              if (Math.random() < dt) contactState[i] = 0;
+            } else {
+              const neighbours = contactNeighbourCount(x, y);
+              if (Math.random() < lambda * (neighbours / 4) * dt) contactState[i] = 1;
+            }
+          }
+        }
+
+        function drawContact(record) {
+          renderLattice(contactCtx, contactState, CW, CH, [WHITE, ORANGE]);
+          let occupied = 0;
+          for (const v of contactState) occupied += v;
+          const density = occupied / contactState.length;
+          contactStats.textContent = `occupied ${occupied}`;
+          if (record) {
+            contactHistory.push(density);
+            if (contactHistory.length > 260) contactHistory.shift();
+          }
+          renderSeries(contactChartCtx, [contactHistory], [ORANGE]);
+        }
+
+        contactToggle.addEventListener('click', () => {
+          contactRunning = !contactRunning;
+          contactToggle.textContent = contactRunning ? 'Pause' : 'Run';
+        });
+        contactReset.addEventListener('click', resetContact);
+        contactLambda.addEventListener('input', () => { contactLambdaOut.textContent = Number(contactLambda.value).toFixed(2); });
+
+        // --- Predator/prey -------------------------------------------------------------
+        const predatorCanvas = document.getElementById('predator-canvas');
+        const predatorCtx = predatorCanvas.getContext('2d');
+        const predatorChart = document.getElementById('predator-chart');
+        const predatorChartCtx = predatorChart.getContext('2d');
+        const predationRate = document.getElementById('predation-rate');
+        const predationRateOut = document.getElementById('predation-rate-out');
+        const predatorStats = document.getElementById('predator-stats');
+        const predatorToggle = document.querySelector('[data-predator-action="toggle"]');
+        const predatorReset = document.querySelector('[data-predator-action="reset"]');
+        const PW = 80;
+        const PH = 45;
+        let predatorState = new Uint8Array(PW * PH); // 0 empty, 1 prey, 2 predator
+        let predatorRunning = !reducedMotion;
+        let preyHistory = [];
+        let predatorHistory = [];
+        let predatorTick = 0;
+
+        function resetPredator() {
+          predatorState = new Uint8Array(PW * PH);
+          for (let i = 0; i < predatorState.length; i += 1) {
+            const r = Math.random();
+            predatorState[i] = r < 0.54 ? 1 : (r < 0.66 ? 2 : 0);
+          }
+          preyHistory = [];
+          predatorHistory = [];
+          predatorTick = 0;
+          drawPredator(true);
+        }
+
+        function predatorNeighbourFractions(x, y) {
+          let prey = 0;
+          let predators = 0;
+          const neighbours = [
+            predatorState[torusIndex(x + 1, y, PW, PH)],
+            predatorState[torusIndex(x - 1, y, PW, PH)],
+            predatorState[torusIndex(x, y + 1, PW, PH)],
+            predatorState[torusIndex(x, y - 1, PW, PH)]
+          ];
+          neighbours.forEach(v => {
+            if (v === 1) prey += 1;
+            else if (v === 2) predators += 1;
+          });
+          return [prey / 4, predators / 4];
+        }
+
+        function stepPredator() {
+          const alpha = 1.45;
+          const beta = Number(predationRate.value);
+          const delta = 0.52;
+          const dt = 0.11;
+          const events = Math.floor(PW * PH * 0.52);
+
+          for (let k = 0; k < events; k += 1) {
+            const x = Math.floor(Math.random() * PW);
+            const y = Math.floor(Math.random() * PH);
+            const i = torusIndex(x, y, PW, PH);
+            const [preyFrac, predFrac] = predatorNeighbourFractions(x, y);
+
+            if (predatorState[i] === 0) {
+              if (Math.random() < alpha * preyFrac * dt) predatorState[i] = 1;
+            } else if (predatorState[i] === 1) {
+              if (Math.random() < beta * predFrac * dt) predatorState[i] = 2;
+            } else if (Math.random() < delta * dt) {
+              predatorState[i] = 0;
+            }
+          }
+        }
+
+        function drawPredator(record) {
+          renderLattice(predatorCtx, predatorState, PW, PH, [WHITE, GREEN, ORANGE]);
+          let prey = 0;
+          let predators = 0;
+          for (const v of predatorState) {
+            if (v === 1) prey += 1;
+            else if (v === 2) predators += 1;
+          }
+          const total = predatorState.length;
+          predatorStats.textContent = `prey ${prey} · predators ${predators}`;
+          if (record) {
+            preyHistory.push(prey / total);
+            predatorHistory.push(predators / total);
+            if (preyHistory.length > 260) preyHistory.shift();
+            if (predatorHistory.length > 260) predatorHistory.shift();
+          }
+          renderSeries(predatorChartCtx, [preyHistory, predatorHistory], [GREEN, ORANGE]);
+        }
+
+        predatorToggle.addEventListener('click', () => {
+          predatorRunning = !predatorRunning;
+          predatorToggle.textContent = predatorRunning ? 'Pause' : 'Run';
+        });
+        predatorReset.addEventListener('click', resetPredator);
+        predationRate.addEventListener('input', () => { predationRateOut.textContent = Number(predationRate.value).toFixed(2); });
+
+        // --- Animation loop ------------------------------------------------------------
+        let frame = 0;
+        function animate() {
+          frame += 1;
+
+          if (voterRunning) {
+            stepVoter();
+            if (frame % 2 === 0) drawVoter();
+          }
+
+          if (contactRunning) {
+            stepContact();
+            contactTick += 1;
+            if (frame % 2 === 0) drawContact(contactTick % 3 === 0);
+          }
+
+          if (predatorRunning) {
+            stepPredator();
+            predatorTick += 1;
+            if (frame % 2 === 0) drawPredator(predatorTick % 3 === 0);
+          }
+
+          requestAnimationFrame(animate);
+        }
+
+        resetVoter();
+        resetContact();
+        resetPredator();
+        voterSpeedOut.textContent = voterSpeed.value;
+        contactLambdaOut.textContent = Number(contactLambda.value).toFixed(2);
+        predationRateOut.textContent = Number(predationRate.value).toFixed(2);
+        voterToggle.textContent = voterRunning ? 'Pause' : 'Run';
+        contactToggle.textContent = contactRunning ? 'Pause' : 'Run';
+        predatorToggle.textContent = predatorRunning ? 'Pause' : 'Run';
+        requestAnimationFrame(animate);
+      })();
+    </script>
+  </body>
+</html>
